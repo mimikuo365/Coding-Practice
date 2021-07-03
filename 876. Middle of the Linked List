@@ -1,0 +1,14 @@
+// Link: https://leetcode.com/problems/middle-of-the-linked-list/submissions/
+// Algorithm: Two pointers (fast/slow)
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* fast = head, *slow = head;
+        while (fast && fast->next && slow) {
+            fast = fast->next->next;
+            slow = slow->next;
+        }
+        return slow;
+    }
+};
